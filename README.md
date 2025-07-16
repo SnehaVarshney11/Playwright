@@ -30,3 +30,10 @@ Once your Playwright test runs, several profiling tabs are available to analyze 
 * Method List -> A flat list of all methods called during your program run. Shows time taken and how often each method was called.
 * Timeline -> A visual timeline of your application’s execution. Displays thread activity, method execution, and timings over the run duration.
 * Events -> Logs key runtime events. Includes GC activity, thread switches, and any notable changes in state.
+
+## Locators 
+In Playwright, a Locator represents a way to find elements on a web page. It is a powerful abstraction that helps you locate elements efficiently and perform actions or assertions on them. Locators are designed to be resilient and smart — they automatically wait for elements to be ready and allow easy chaining and filtering.
+<br>
+Using Locators, you can find elements by different strategies such as role, label, placeholder text, exact text, alt text, title attribute, test IDs, CSS selectors, XPath, and even inside Shadow DOM.
+<br>
+<a href='https://github.com/SnehaVarshney11/Playwright/tree/main/Playwright-Java/src/test/java/Locators'><b>Locators</b></a>
