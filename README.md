@@ -37,3 +37,43 @@ In Playwright, a Locator represents a way to find elements on a web page. It is 
 Using Locators, you can find elements by different strategies such as role, label, placeholder text, exact text, alt text, title attribute, test IDs, CSS selectors, XPath, and even inside Shadow DOM.
 <br>
 <a href='https://github.com/SnehaVarshney11/Playwright/tree/main/Playwright-Java/src/test/java/Locators'><b>Locators</b></a>
+
+## Test Isolation
+Playwright has the concept of a BrowserContext which is an in-memory isolated browser profile. It's recommended to create a new BrowserContext for each test to ensure they don't interfere with each other.
+```
+Browser browser = playwright.chromium().launch();
+BrowserContext context = browser.newContext();
+Page page = context.newPage();
+```
+
+## Playwright Trace Viewer Integration
+### What is Trace Viewer 
+The Playwright Trace Viewer is an advanced debugging tool that captures a full trace of your browser-based tests. It allows you to visually inspect each step of your test execution — including clicks, inputs, navigations, DOM changes, console logs, network activity, and screenshots.
+<br>
+It's like a black box recorder for your test runs — perfect for diagnosing test failures or flaky behavior.
+
+### 🎯 Why Use Trace Viewer?
+🔎 Visual Debugging: Inspect UI state before and after each test action. <br>
+🐞 Identify Flaky Tests: Detect issues caused by timing, network, or visibility problems. <br>
+📸 Screenshots & Snapshots: View exact page states at each step. <br>
+🌐 Network & Console Logs: See HTTP requests, responses, and browser logs. <br>
+⚙️ Step-by-Step Playback: Replay your test as it happened.
+
+### 🛠️ How It Works
+1. Start tracing at the beginning of the test:
+```
+context.tracing().start(new Tracing.StartOptions()
+    .setScreenshots(true)
+    .setSnapshots(true)
+    .setSources(true));
+```
+2. Execute your test as usual.
+3. Stop tracing and save the trace:
+```
+context.tracing().stop(new Tracing.StopOptions()
+    .setPath(Paths.get("trace.zip")));
+```
+4. Open the trace for debugging:
+Via browser:
+🔗 <a href='https://trace.playwright.dev/'>https://trace.playwright.dev/</a> <br>
+→ Drag and drop your trace.zip file. By default, it's saved to the root of your project directory (or the working directory where the test runs).
