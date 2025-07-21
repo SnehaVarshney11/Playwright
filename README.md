@@ -22,6 +22,40 @@
 Unlike Selenium, which sends each command as an independent HTTP request to browser drivers, Playwright maintains a single persistent WebSocket connection with all browser instances. This approach reduces latency, improves reliability, and lowers failure points.
 Each test runs in an isolated browser context, simulating a fresh user profile, which helps in avoiding side effects between tests and improves test stability.
 
+## Difference Between Selenium and Playwright 
+<table>
+  <tr>
+    <th>Aspect</th>
+    <th>Playwright</th>
+    <th>Selenium</th>
+  </tr>
+  <tr>
+    <td>Modern architecture</td>
+    <td>Built from scratch with modern web apps in mind, supports the latest browser APIs</td>
+    <td>Older architecture, originally for Firefox and IE</td>
+  </tr>
+  <tr>
+    <td>Auto-waiting</td>
+    <td>Automatically waits for elements to be ready before actions, reducing flaky tests</td>
+    <td>Requires manual waits, more flaky tests</td>
+  </tr>
+  <tr>
+    <td>Multiple browser contexts</td>
+    <td>Supports multiple isolated browser contexts in a single instance (like multiple users)</td>
+    <td>Limited support requires separate driver instances</td>
+  </tr>
+  <tr>
+    <td>Test Runner</td>
+    <td>Comes with its own test runner (Playwright Test)</td>
+    <td>Relies on third party frameworks (Junit, TestNG etc)</td>
+  </tr>
+  <tr>
+    <td>Screenshot & Video</td>
+    <td>Supports screenshots, videos, and trace generation out-of-the-box</td>
+    <td>Requires extra setup for video capture and tracing</td>
+  </tr>
+</table>
+
 ### Profiling Tools After Test Execution
 Once your Playwright test runs, several profiling tabs are available to analyze execution and optimize performance: <br>
 <b>Tabs -</b> Flame Graph, Call Tree, Method List, Timeline, Events
