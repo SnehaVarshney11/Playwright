@@ -1,6 +1,7 @@
 # Playwright Automation Testing with Java 
 * Playwright is an open-source automation framework designed for end-to-end testing of modern web applications. Developed by Microsoft. 
 * Playwright is a Node.js library that, with a single API, automates websites and web apps running on Chromium, Firefox, and WebKit.
+* Webkit is a browser engine, developed by Apple used in its Safari web browser as well as IOS web browser. 
 * Playwright enables cross-browser, cross-platform, and cross-language testing with a unified API. It supports both headless and headed browser modes, allowing tests to run locally or in CI (prod) environments.
 * Its architecture ensures fast execution and test isolation by creating a new browser context for each test, simulating a fresh browser profile.
 * Playwright is distributed as a set of Maven modules. The easiest way to use it is to add one dependency to your project's pom.xml
