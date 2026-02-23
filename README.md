@@ -23,6 +23,16 @@
 Unlike Selenium, which sends each command as an independent HTTP request to browser drivers, Playwright maintains a single persistent WebSocket connection with all browser instances. This approach reduces latency, improves reliability, and lowers failure points.
 Each test runs in an isolated browser context, simulating a fresh user profile, which helps in avoiding side effects between tests and improves test stability.
 
+### By default, Playwright runs in headless mode, meaning:
+* It executes tests in the background
+* No browser UI is visible
+* Faster execution 
+To see the browser UI while running, you must set:
+`
+Browser browser = playwright.chromium().launch(
+                new BrowserType.LaunchOptions().setHeadless(false));
+`
+
 ## Difference Between Selenium and Playwright 
 <table>
   <tr>
